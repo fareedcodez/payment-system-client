@@ -1,7 +1,26 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  define: {
-    'process.env.REACT_APP_API_URL': JSON.stringify('http://localhost:8000/api'),
-    'process.env.REACT_APP_FLUTTERWAVE_PUBLIC_KEY': JSON.stringify('your-flutterwave-public-key'),
-  }
+  server: {
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+  },
 });
