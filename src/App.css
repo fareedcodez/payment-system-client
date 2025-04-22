@@ -1,0 +1,90 @@
+.main-layout {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  background-color: white;
+}
+
+.sidebar-sticky {
+  height: calc(100vh - 56px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sidebar .nav-link {
+  color: #333;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #f8f9fa;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+  border-left: 3px solid #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.sidebar .nav-link .fa,
+.sidebar .nav-link svg {
+  margin-right: 0.5rem;
+  color: #999;
+}
+
+.sidebar .nav-link.active .fa,
+.sidebar .nav-link.active svg {
+  color: #007bff;
+}
+
+.main-content {
+  margin-top: 56px;
+  padding-top: 1.5rem;
+}
+
+.dashboard-card .icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Flutterwave specific styles */
+.flw-button {
+  background-color: #f5a623;
+  color: white;
+  border: none;
+}
+
+.flw-button:hover {
+  background-color: #e69617;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .sidebar {
+    position: static;
+    height: auto;
+    padding-bottom: 15px;
+  }
+}
